@@ -3,7 +3,7 @@ import "./VideoSection.scss";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import VideoControls from "../VideoControls/VideoControls";
 
-function VideoSection() {
+function VideoSection({ selectedVideo, duration }) {
 
     return (
         <section className='video'>

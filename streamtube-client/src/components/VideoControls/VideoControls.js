@@ -8,6 +8,15 @@ import "./VideoControls.scss";
 function VideoControls({ duration, isPlaying, onPlayPause }) {
     const [currentTime] = useState(0);
 
+    const formatTime = (timeInSeconds) => {
+        if (typeof timeInSeconds !== "number" || isNaN(timeInSeconds)) {
+            return "0:00";
+        }
+        const minutes = Math.floor(timeInSeconds / 60);
+        const seconds = Math.floor(timeInSeconds % 60);
+        return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    };
+
     return (
         <div className='video-controls'>
             <button className='video-controls__play' 
@@ -24,11 +33,11 @@ function VideoControls({ duration, isPlaying, onPlayPause }) {
                     <input
                         type='range'
                         className='video-controls__scrubber'
-                        value=""
-                        
+                        value={currentTime}
+                        max={duration}
                     />
                     <p className='video-controls__scrub-time'>
-                        
+                    {`${formatTime(currentTime)}/${formatTime(duration)}`}
                     </p>
                 </div>
             </div>

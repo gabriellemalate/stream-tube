@@ -1,7 +1,7 @@
 import React, { useRef}from "react";
-import "./VideoVid.scss"
+import "./VideoPlayer.scss"
 
-function VideoVid() {
+function VideoPlayer() {
     const videoRef = useRef(null);
     const videoUrl = selectedVideo ? selectedVideo.video : "";
     const posterImageUrl = selectedVideo ? `${selectedVideo.image}`: "";
@@ -13,4 +13,4 @@ function VideoVid() {
     );
 }
 
-export default VideoVid;
+export default VideoPlayer;

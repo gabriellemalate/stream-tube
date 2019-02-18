@@ -11,6 +11,12 @@ function readVideosData() {
     return JSON.parse(videosData);
 }
 
+// write video data to JSON file
+function writeVideosData(videos) {
+    const videosPath = path.join(__dirname, '../data', 'videos.json');
+    fs.writeFileSync(videosPath, JSON.stringify(videos, null, 2), 'utf-8');
+}
+
 router.get('/', (req, res) => {
     const videos = readVideosData();
     res.json(videos.map(({ id, title, channel, image }) => ({ id, title, channel, image })));
@@ -26,6 +32,35 @@ router.get('/:id', (req, res) => {
     } else {
         res.status(404).json({ message: 'a video with that ID does not exist' });
     }
+});
+
+router.post('/', (req, res) => {
+    const { title, description } = req.body;
+
+    const newVideoId = uuidv4();
+
+    const newVideo = {
+        id: newVideoId,
+        title,
+        description,
+        channel: 'BrainStation',
+        image: 'Upload-video-preview.jpg',
+        views: '0',
+        likes: '0',
+        duration: "4:20",
+        video: "https://project-2-api.herokuapp.com/stream",
+        timestamp: Date.now(),
+        comments: [],
+    };
+
+    const videos = readVideosData();
+
+    // add the new video to videos array
+    videos.push(newVideo);
+
+    writeVideosData(videos);
+
+    res.status(201).json(newVideo);
 });
 
 module.exports = router;

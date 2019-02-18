@@ -4,6 +4,13 @@ const fs = require("fs");
 const path = require('path');
 const { v4: uuidv4 } = require("uuid");
 
+// read video data from json file
+function readVideosData() {
+    const videosPath = path.join(__dirname, '../data', 'videos.json');
+    const videosData = fs.readFileSync(videosPath, 'utf-8');
+    return JSON.parse(videosData);
+}
+
 router.get('/', (req, res) => {
     const videos = readVideosData();
     res.json(videos.map(({ id, title, channel, image }) => ({ id, title, channel, image })));

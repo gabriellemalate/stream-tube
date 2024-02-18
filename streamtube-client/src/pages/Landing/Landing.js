@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Landing.scss"
 import axios from "axios";
 
-function Main() {
+function LandingPage() {
 
     return (
         <>
@@ -12,4 +12,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default LandingPage;

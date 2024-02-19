@@ -24,6 +24,9 @@ function VideoPlayer({ selectedVideo, isPlaying }) {
     );
 }
 
-
+VideoVid.propTypes = {
+    selectedVideo: PropTypes.object,
+    isPlaying: PropTypes.bool,
+};
 
 export default VideoPlayer;

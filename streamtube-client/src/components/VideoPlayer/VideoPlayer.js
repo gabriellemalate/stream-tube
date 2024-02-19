@@ -1,4 +1,4 @@
-import React, { useRef}from "react";
+import React, { useRef, useEffect }from "react";
 import PropTypes from "prop-types";
 import "./VideoPlayer.scss"
 
@@ -24,7 +24,7 @@ function VideoPlayer({ selectedVideo, isPlaying }) {
     );
 }
 
-VideoVid.propTypes = {
+VideoPlayer.propTypes = {
     selectedVideo: PropTypes.object,
     isPlaying: PropTypes.bool,
 };

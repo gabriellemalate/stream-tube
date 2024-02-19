@@ -5,17 +5,18 @@ import Expand from "../../assets/images/icons/fullscreen.svg";
 import Volume from "../../assets/images/icons/volume_off.svg";
 import "./VideoControls.scss";
 
-function VideoControls() {
+function VideoControls({ duration, isPlaying, onPlayPause }) {
+    const [currentTime] = useState(0);
 
     return (
         <div className='video-controls'>
             <button className='video-controls__play' 
-            
+            onClick={onPlayPause}
             >
                 <img
                     className='video-controls__play-icon'
-                    src=""
-                    alt=""
+                    src={isPlaying ? Pause : Play}
+                    alt={isPlaying ? "Pause" : "Play"}
                 />
             </button>
             <div className='video-controls__eq'>

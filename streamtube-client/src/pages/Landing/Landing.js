@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Landing.scss"
 import axios from "axios";
 import VideoSection from "../../components/VideoSection/VideoSection";
+import VideoInfo from '../../components/VideoInfo/VideoInfo';
 
 const apiUrl = "http://localhost:8080";
 
@@ -67,6 +68,17 @@ function LandingPage() {
         <>
             <main className="main">
                 <VideoSection selectedVideo={selectedVideo} duration={selectedVideo ? selectedVideo.duration : 0} />
+                <div className="main-eq">
+                    <section className="main-eq__all">
+                            <>
+                                <div className="main-eq__section">
+                                    <VideoInfo videoData={selectedVideo || videoData[0]} />
+                                    
+                                </div>
+                                
+                            </>
+                    </section>
+                </div>
             </main>
         </>
     );

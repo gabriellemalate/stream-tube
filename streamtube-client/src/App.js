@@ -4,6 +4,7 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import LandingPage from './pages/Landing/Landing';
+import UploadPage from "./pages/Upload/Upload"
 
 function App() {
 

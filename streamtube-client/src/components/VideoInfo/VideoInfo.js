@@ -10,7 +10,14 @@ function VideoInfo({ videoData }) {
 
     const { title, channel, timestamp, views, likes, description } = videoData;
 
-    
+    const date = new Date(timestamp);
+    const formattedDate = date.toLocaleDateString
+    ("en-US", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+    })
+    ;
 
     return (
         <section className='video-info'>
@@ -25,7 +32,7 @@ function VideoInfo({ videoData }) {
                         {`By ${channel}`}
                         </h3>
                         <p className='video-info__legend-left-date'>
-
+                        {formattedDate}
                         </p>
                     </div>
 

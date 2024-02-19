@@ -70,13 +70,17 @@ function LandingPage() {
                 <VideoSection selectedVideo={selectedVideo} duration={selectedVideo ? selectedVideo.duration : 0} />
                 <div className="main-eq">
                     <section className="main-eq__all">
+                        {loading ? (
+                            <h2 className="main-eq__section-load">Loading...</h2>
+                        ) : (
                             <>
                                 <div className="main-eq__section">
                                     <VideoInfo videoData={selectedVideo || videoData[0]} />
-                                    
+
                                 </div>
-                                
+
                             </>
+                        )}
                     </section>
                 </div>
             </main>

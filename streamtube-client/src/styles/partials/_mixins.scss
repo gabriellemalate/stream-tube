@@ -1,0 +1,114 @@
+@use "./variables" as *;
+
+// Screen Sizes
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+}
+
+// Flex Directions
+@mixin column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+// Buttons
+@mixin button {
+    height: 2.5rem;
+    width: 9.375rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0.25rem;
+}
+@mixin button--mobile {
+    @include button;
+    width: 100%;
+    border: 0;
+    background-color: rgb(14, 126, 164);
+    color: white;
+    justify-content: center;
+}
+
+// Text styles
+@mixin page-head--mobile {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+}
+@mixin section-head {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+@mixin subhead--mobile {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 700;
+}
+@mixin body--mobile {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+@mixin label--mobile {
+    font-size: 0.625rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+@mixin page-head--tablet {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+}
+@mixin subhead--tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 700;
+}
+@mixin body--tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+}
+@mixin label--tablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+}
+
+// Image
+@mixin user {
+    border-radius: 50%;
+    width: 12vw;
+    max-width: 2.6rem;
+    background-color: gray;
+}
+
+@mixin controls {
+    background-color: rgb(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    border: 0;
+}
+
+// Input Box
+@mixin input-box {
+    padding-top: 0.6rem;
+    resize: none;
+    background-color: beige;
+    border-radius: 0.25rem;
+    border: gray 0.0625rem solid;
+    scroll-behavior: none;
+    height: 2.5rem;
+}

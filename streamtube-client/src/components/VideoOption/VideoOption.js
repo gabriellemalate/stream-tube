@@ -8,11 +8,11 @@ function VideoOption({ videoData, isSelected
     const { id, title, channel, image, } = videoData;
 
     return (
-        <Link to={`/videos/${id}`} className={`other__one ${isSelected ? "selected" : ""}`}>
-            <img className='other__one-preview' src={image} alt="Next Video Preview" />
-            <div className='other__one-text'>
-                <h4 className='other__one-text-title'>{title}</h4>
-                <p className='other__one-text-creator'>{channel}</p>
+        <Link to={`/videos/${id}`} className={`option ${isSelected ? "selected" : ""}`}>
+            <img className='option-preview' src={image} alt="Next Video Preview" />
+            <div className='option-text'>
+                <h4 className='option-text-title'>{title}</h4>
+                <p className='option-text-creator'>{channel}</p>
             </div>
         </Link>
     );

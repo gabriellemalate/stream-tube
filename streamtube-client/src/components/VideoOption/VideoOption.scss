@@ -1,0 +1,65 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.option {
+    @include row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: $padding__btwn-comps--mobile;
+
+    @include tablet {
+        justify-content: flex-start;
+        padding-bottom: $padding__btwn-comps--tablet;
+    }
+
+    &-preview {
+        background-color: silver;
+        border-radius: 0.25rem;
+        width: 32vw;
+        height: 28vh;
+        max-height: 18vw;
+        max-width: 22vh;
+
+        @include tablet {
+            width: 12vh;
+            height: 7.12vh;
+            max-width: 14vh;
+            max-height: 10vw;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        @include desktop {
+            max-width: 11.6vh;
+            max-height: 7vh;
+        }
+    }
+    &-text {
+        width: 60%;
+        @include column;
+        align-items: flex-start;
+
+        @include tablet {
+            width: 19.8vh;
+        }
+
+        @include desktop {
+            width: 20vh;
+        }
+
+        &-title {
+            margin: 0;
+            @include subhead--mobile;
+            padding-bottom: 0.4rem;
+
+            @include tablet {
+                @include subhead--tablet;
+            }
+        }
+        &-creator {
+            margin: 0;
+            @include body--mobile;
+        }
+    }
+}

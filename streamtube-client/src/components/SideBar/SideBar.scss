@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.other {
+.sidebar {
     @include column;
     padding-bottom: $padding__btwn-comps--mobile;
 

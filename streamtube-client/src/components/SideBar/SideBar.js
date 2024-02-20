@@ -13,11 +13,11 @@ function SideBar({ videoData, selectedVideo }) {
     );
 
     return (
-        <section className='SideBar'>
-            <div className='SideBar__all'>
-                <h3 className='SideBar__head'>NEXT  VIDEOS</h3>
+        <section className='sidebar'>
+            <div className='sidebar__all'>
+                <h3 className='sidebar__head'>NEXT  VIDEOS</h3>
                 {filteredVideoData.map((data) => (
-                    <div key={data.id} className="SideBar__link" onClick={() => navigate(`/videos/${data.id}`)}>
+                    <div key={data.id} className="sidebar__link" onClick={() => navigate(`/videos/${data.id}`)}>
                         <VideoOption
                             key={data.id}
                             videoData={data}

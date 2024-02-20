@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from 'react-router-dom';
 import "./SideBar.scss";
+import VideoOption from "../VideoOption/VideoOption";
 
 function SideBar({ videoData, selectedVideo }) {
     const navigate = useNavigate();
@@ -17,7 +18,11 @@ function SideBar({ videoData, selectedVideo }) {
                 <h3 className='SideBar__head'>NEXT  VIDEOS</h3>
                 {filteredVideoData.map((data) => (
                     <div key={data.id} className="SideBar__link" onClick={() => navigate(`/videos/${data.id}`)}>
-
+                        <VideoOption
+                            key={data.id}
+                            videoData={data}
+                            isSelected={selectedVideo && selectedVideo.id === data.id}
+                        />
                     </div>
                 ))}
             </div>

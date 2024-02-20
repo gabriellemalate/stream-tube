@@ -1,0 +1,34 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.sidebar {
+    @include column;
+    padding-bottom: $padding__btwn-comps--mobile;
+
+    &__all {
+        @include column;
+        align-items: flex-start;
+        width: 90%;
+        padding-bottom: $padding__btwn-comps--tablet;
+
+        @include desktop {
+            padding-top: $padding__btwn-comps--tablet;
+            padding-left: 1rem;
+        }
+    }
+    &__head {
+        @include subhead--mobile;
+        color: silver;
+        margin: 0;
+        padding: 0.3rem 0 $padding__after-head--mobile;
+
+        @include tablet {
+            padding-bottom: $padding__after-head--tablet;
+            @include label--tablet;
+        }
+
+        @include desktop {
+            padding-bottom: 1rem;
+        }
+    }
+}

@@ -1,11 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import "./SideBar.scss";
 
 function SideBar({ videoData, selectedVideo }) {
     const navigate = useNavigate();
 
+    // is selectedVideo truthy? if yes, then access its properties
+    const filteredVideoData = videoData.filter(
+        (video) => selectedVideo && video.id !== selectedVideo.id
+    );
 
     return (
         <section className='SideBar'>
@@ -13,7 +17,7 @@ function SideBar({ videoData, selectedVideo }) {
                 <h3 className='SideBar__head'>NEXT  VIDEOS</h3>
                 {filteredVideoData.map((data) => (
                     <div key={data.id} className="SideBar__link" onClick={() => navigate(`/videos/${data.id}`)}>
-                        
+
                     </div>
                 ))}
             </div>

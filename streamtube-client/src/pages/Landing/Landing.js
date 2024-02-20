@@ -65,7 +65,11 @@ function LandingPage() {
         }
     }, [selectedVideo]);
 
-    
+    const handleSelectVideo = (selectedVideo) => {
+        // update URL when a video is selected
+        navigate(`/videos/${selectedVideo.id}`);
+        setSelectedVideo(selectedVideo);
+    };
 
     return (
         <>

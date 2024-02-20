@@ -4,6 +4,7 @@ import "./Landing.scss"
 import axios from "axios";
 import VideoSection from "../../components/VideoSection/VideoSection";
 import VideoInfo from '../../components/VideoInfo/VideoInfo';
+import SideBar from "../../components/SideBar/SideBar";
 
 const apiUrl = "http://localhost:8080";
 
@@ -64,6 +65,8 @@ function LandingPage() {
         }
     }, [selectedVideo]);
 
+    
+
     return (
         <>
             <main className="main">
@@ -78,7 +81,11 @@ function LandingPage() {
                                     <VideoInfo videoData={selectedVideo || videoData[0]} />
 
                                 </div>
-
+                                <SideBar
+                                    videoData={videoData}
+                                    onSelect={handleSelectVideo}
+                                    selectedVideo={selectedVideo}
+                                />
                             </>
                         )}
                     </section>

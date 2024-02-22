@@ -66,6 +66,13 @@ function LandingPage() {
         }
     }, [selectedVideo]);
 
+    const addComment = (newComment) => {
+        setSelectedVideo((prevSelectedVideo) => ({
+            ...prevSelectedVideo,
+            comments: [...prevSelectedVideo.comments, newComment],
+        }));
+    };
+
     const handleSelectVideo = (selectedVideo) => {
         // update URL when a video is selected
         navigate(`/videos/${selectedVideo.id}`);

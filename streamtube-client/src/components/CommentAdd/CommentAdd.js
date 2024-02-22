@@ -5,7 +5,11 @@ import Empty from "../../assets/images/empty-image.png";
 function CommentOld({ comments }) {
     const { id, name, timestamp, comment } = comments;
 
-    
+    const formattedDate = new Date(timestamp).toLocaleDateString("en-US", {
+        month: "2-digit",
+        day: "2-digit",
+        year: "numeric",
+    });
 
     return (
         <article className='comments-old'>

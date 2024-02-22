@@ -7,15 +7,21 @@ const apiKey = "c8f93081-09f2-4de0-baa5-ffe6fbc33fcf"
 
 function CommentAdd({ onAddComment, videoId }) {
     const [commentText, setCommentText] = useState("");
-
+    const [hasError, setHasError] = useState(false);
 
     const handleCommentChange = (event) => {
         setCommentText(event.target.value);
-
+        setHasError(false); // reset
     };
 
     const handleCommentSubmit = async (event) => {
         event.preventDefault();
+
+        if (commentText.trim() === "") {
+            // empty error
+            setHasError(true);
+            return;
+        }
 
         try {
             const response = await axios.post(`https://project-2-api.herokuapp.com/videos/${videoId}/comments`, {
@@ -31,11 +37,13 @@ function CommentAdd({ onAddComment, videoId }) {
             onAddComment(newComment);
             setCommentText(""); // clear
         } catch (error) {
+            console.error("Error adding comment:", error.message);
+            setHasError(true);
         }
     };
 
     return (
-        <article className=""
+        <article className={`comments-add ${hasError ? "has-error" : ""}`}
         >
             <div className="comments-add__all">
                 <img className="comments-add__img" src="" alt="User Display" />

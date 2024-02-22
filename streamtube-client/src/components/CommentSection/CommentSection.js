@@ -1,9 +1,14 @@
 import React from "react";
 import "./CommentSection.scss"
+import CommentAdd from "../CommentAdd/CommentAdd";
+import CommentOld from "../Comments/Comments";
 
+function Comments({ videoData, onAddComment }) {
+    if (!videoData || !videoData.comments) {
+        return null;
+    }
 
-function Comments() {
-
+    const { comments } = videoData;
 
     return (
         <section className='comments'>
@@ -13,6 +18,10 @@ function Comments() {
                     }`}</h4>
 
 
+
+                {comments.map((comment) => (
+                    <CommentOld key={comment.id} comments={comment} />
+                ))}
             </div>
         </section>
     );

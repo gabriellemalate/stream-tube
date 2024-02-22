@@ -5,6 +5,7 @@ import axios from "axios";
 import VideoSection from "../../components/VideoSection/VideoSection";
 import VideoInfo from '../../components/VideoInfo/VideoInfo';
 import SideBar from "../../components/SideBar/SideBar";
+import Comments from "../../components/CommentSection/CommentSection";
 
 const apiUrl = "http://localhost:8080";
 
@@ -65,6 +66,13 @@ function LandingPage() {
         }
     }, [selectedVideo]);
 
+    const addComment = (newComment) => {
+        setSelectedVideo((prevSelectedVideo) => ({
+            ...prevSelectedVideo,
+            comments: [...prevSelectedVideo.comments, newComment],
+        }));
+    };
+
     const handleSelectVideo = (selectedVideo) => {
         // update URL when a video is selected
         navigate(`/videos/${selectedVideo.id}`);
@@ -83,7 +91,10 @@ function LandingPage() {
                             <>
                                 <div className="main-eq__section">
                                     <VideoInfo videoData={selectedVideo || videoData[0]} />
-
+                                    <Comments
+                                    videoData={selectedVideo}
+                                    onAddComment={addComment}
+                                />
                                 </div>
                                 <SideBar
                                     videoData={videoData}

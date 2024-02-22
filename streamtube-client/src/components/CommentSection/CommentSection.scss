@@ -1,0 +1,35 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments {
+    @include column;
+    margin-bottom: 1rem;
+
+    @include tablet {
+        margin-bottom: $padding__btwn-comps--tablet;
+    }
+
+    @include desktop {
+        align-self: flex-end;
+        width: 84%;
+        align-items: flex-start;
+    }
+
+    &__eq {
+        width: 90%;
+
+        @include desktop {
+            @include column;
+            align-items: flex-start;
+            width: 100%;
+        }
+    }
+
+    &__counter {
+        @include subhead--mobile;
+
+        @include tablet {
+            @include subhead--tablet;
+        }
+    }
+}

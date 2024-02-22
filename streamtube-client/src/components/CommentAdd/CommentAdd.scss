@@ -1,0 +1,140 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments-add {
+    border-bottom: $mercury 0.1rem solid;
+
+    @include tablet {
+        padding-bottom: 0.6rem;
+    }
+
+    @include desktop {
+        width: 98.6%;
+        align-self: flex-end;
+        border-bottom: 0;
+    }
+
+    &__all {
+        @include row;
+        justify-content: space-between;
+        padding: 0 0 $padding__btwn-comps--mobile;
+
+        @include desktop {
+            width: 96%;
+        }
+    }
+
+    &__img {
+        @include user;
+        align-self: flex-start;
+        margin-top: 1rem;
+        margin-right: 1rem;
+
+        @include tablet {
+            margin-right: 1.2rem;
+            margin-top: 1.2rem;
+        }
+    }
+
+    &__text {
+        width: 100%;
+
+        @include desktop {
+            width: 88.8%;
+        }
+
+        &-title {
+            @include subhead--mobile;
+            color: $silver;
+            margin: 0;
+            padding-bottom: 0.2rem;
+        }
+
+        &-form {
+            @include column;
+            width: 100%;
+
+            @include tablet {
+                @include row;
+                justify-content: space-between;
+            }
+        }
+        &-box {
+            @include input-box;
+            width: 94%;
+            margin-bottom: 1rem;
+            padding-left: 1rem;
+            @include font;
+            font-family: avenir-next, Avenir, Arial, Helvetica, sans-serif;
+
+            &:focus {
+                border-color: $brainflix-blue;
+                outline: none; 
+            }
+
+            &.has-error {
+                border-color: #D22D2D; 
+            }
+
+            &:focus.has-error {
+                border-color: $brainflix-blue;
+            }
+
+            @include tablet {
+                margin-bottom: 0;
+                width: 86%;
+            }
+
+            &::placeholder {
+                font-family: avenir-nexr, avenir, Arial, Helvetica, sans-serif;
+                color: $brainflix-black;
+            }
+        }
+        &-button {
+            @include button--mobile;
+            @include row;
+            @include label--mobile;
+            font-size: 0.8rem;
+            width: 100%;
+            padding: 0;
+            justify-content: flex-start;
+
+            &:hover{
+                background-color: $brainflix-DarkBlue;
+                cursor: pointer;
+            }
+
+            @include tablet {
+                width: 17vh;
+                min-width: 17vh;
+                margin-left: 1.52rem;
+            }
+
+            @include desktop {
+                width: 16vh;
+                min-width: 16vh;
+            }
+
+            &-eq {
+                @include row;
+                justify-content: space-between;
+                width: 64%;
+
+                @include tablet {
+                    width: 12.4vh;
+                    padding-left: 0.1rem;
+                }
+
+                @include tablet {
+                    width: 12vh;
+                }
+            }
+
+            &-icon {
+                width: 1.2rem;
+                left: 2rem;
+                margin: 0 0.6rem;
+            }
+        }
+    }
+}

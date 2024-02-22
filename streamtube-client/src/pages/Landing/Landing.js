@@ -5,6 +5,7 @@ import axios from "axios";
 import VideoSection from "../../components/VideoSection/VideoSection";
 import VideoInfo from '../../components/VideoInfo/VideoInfo';
 import SideBar from "../../components/SideBar/SideBar";
+import Comments from "../../components/CommentSection/CommentSection";
 
 const apiUrl = "http://localhost:8080";
 

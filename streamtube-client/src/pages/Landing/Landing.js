@@ -91,7 +91,10 @@ function LandingPage() {
                             <>
                                 <div className="main-eq__section">
                                     <VideoInfo videoData={selectedVideo || videoData[0]} />
-
+                                    <Comments
+                                    videoData={selectedVideo}
+                                    onAddComment={addComment}
+                                />
                                 </div>
                                 <SideBar
                                     videoData={videoData}

@@ -1,1 +1,76 @@
 
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comments-old {
+    border-bottom: 0.1rem solid $mercury;
+    padding-top: 1rem;
+
+    @include tablet {
+        padding: $padding__btwn-comps--tablet 0 $padding__btwn-comps--tablet;
+    }
+
+    @include desktop {
+        border-bottom: 0;
+        border-top: 0.1rem solid $mercury;
+        @include row;
+        justify-content: flex-end;
+    }
+
+    &__eq {
+        @include row;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        @include desktop {
+            width: 98.4%;
+        }
+    }
+
+    &__img {
+        @include user;
+    }
+    &__text {
+        width: 100%;
+        padding-left: $padding__btwn-comps--mobile;
+
+        @include desktop {
+            width: 89.5%;
+            padding-right: 1.5rem;
+            padding-left: 0rem;
+        }
+
+        &-top {
+            @include row;
+            justify-content: space-between;
+
+            &-name {
+                margin: 0;
+                @include subhead--mobile;
+
+                @include tablet {
+                    @include subhead--tablet;
+                }
+            }
+
+            &-date {
+                margin: 0;
+                @include body--mobile;
+                color: $silver;
+
+                @include tablet {
+                    @include body--tablet;
+                }
+            }
+        }
+
+        &-comment {
+            @include body--mobile;
+
+            @include tablet {
+                margin-bottom: 0;
+                @include body--tablet;
+            }
+        }
+    }
+}

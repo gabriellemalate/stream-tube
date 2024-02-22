@@ -1,30 +1,65 @@
-import React from "react";
-import "./CommentOld.scss"
-import Empty from "../../assets/images/empty-image.png";
+import React, { useState } from "react";
+import axios from "axios";
+import "./CommentAdd.scss"
+import SpeechBubble from "../../assets/images/icons/add_comment.svg";
 
-function CommentOld({ comments }) {
-    const { id, name, timestamp, comment } = comments;
+const apiKey = "c8f93081-09f2-4de0-baa5-ffe6fbc33fcf"
 
-    const formattedDate = new Date(timestamp).toLocaleDateString("en-US", {
-        month: "2-digit",
-        day: "2-digit",
-        year: "numeric",
-    });
+function CommentAdd({ onAddComment, videoId }) {
+    const [commentText, setCommentText] = useState("");
+
+
+    const handleCommentChange = (event) => {
+        setCommentText(event.target.value);
+
+    };
+
+    const handleCommentSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const response = await axios.post(`https://project-2-api.herokuapp.com/videos/${videoId}/comments`, {
+                name: "Nigel",
+                comment: commentText,
+            },
+            {   params: {
+                api_key: apiKey,
+                },
+            });
+
+            const newComment = response.data;
+            onAddComment(newComment);
+            setCommentText(""); // clear
+        } catch (error) {
+        }
+    };
 
     return (
-        <article className='comments-old'>
-            <div key={id} className='comments-old__eq'>
-                <img className='comments-old__img' src={Empty} alt="Commenter"></img>
-                <div className="comments-old__text">
-                    <div className="comments-old__text-top">
-                        <h3 className="comments-old__text-top-name">{name}</h3>
-                        <p className="comments-old__text-top-date">{formattedDate}</p>
-                    </div>
-                    <p className="comments-old__text-comment">{comment}</p>
+        <article className=""
+        >
+            <div className="comments-add__all">
+                <img className="comments-add__img" src="" alt="User Display" />
+                <div className="comments-add__text">
+                    <h3 className="comments-add__text-title">JOIN THE CONVERSATION</h3>
+                    <form className="comments-add__text-form" onSubmit={handleCommentSubmit}>
+                        <textarea
+                            className={`comments-add__text-box ${hasError ? "has-error" : ""}`}
+                            type="text"
+                            placeholder="Add a new comment"
+                            value={commentText}
+                            onChange={handleCommentChange}
+                        ></textarea>
+                        <button className="comments-add__text-button" type="submit">
+                            <div className="comments-add__text-button-eq">
+                                <img className="comments-add__text-button-icon" src={SpeechBubble} alt="Add a Comment" />
+                                COMMENT
+                            </div>
+                        </button>
+                    </form>
                 </div>
             </div>
         </article>
     );
 }
 
-export default CommentOld;
+export default CommentAdd;

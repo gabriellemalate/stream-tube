@@ -10,8 +10,10 @@ function UploadPage() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
+    const [inputError, setInputError] = useState({ title: false, description: false });
 
-    const handleTitleChange = (e) => {
+const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
 
@@ -21,7 +23,14 @@ function UploadPage() {
 
     const handlePublish = async () => {
         // validate that both title and description are provided
-        if (!title.trim() || !description.trim()) 
+        if (!title.trim() || !description.trim()) {
+            setError("You must provide both a title and a description.");
+            setInputError({
+                title: !title.trim(),
+                description: !description.trim(),
+            });
+            return;
+        }
 
         try {
             const response = await axios.post("http://localhost:8080/videos", {
@@ -33,7 +42,8 @@ function UploadPage() {
             // redirect to success page
             navigate("/success");
         } catch (error) {
-            
+            console.error("Error uploading video:", error.response);
+            setError("An error occurred during upload. Please try again.");
         }
     };
 

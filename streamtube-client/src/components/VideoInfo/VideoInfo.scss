@@ -1,2 +1,152 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.video-info {
+    @include column;
+    width: 100%;
+
+    @include desktop {
+        align-self: flex-end;
+        width: 84%;
+    }
+
+    &__eq {
+        @include column;
+        width: 90%;
+
+        @include desktop {
+            width: 100%;
+        }
+    }
+
+    &__head {
+        margin: 0;
+        padding-bottom: 0.92rem;
+        align-self: flex-start;
+
+        @include tablet {
+            @include page-head--tablet;
+            padding: 1.5rem 0 0;
+        }
+    }
+
+    &__legend {
+        @include row;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 0.0625rem solid gray;
+        border-top: 0.0625rem solid gray;
+        padding: $padding__btwn-comps--mobile 0 $padding__btwn-comps--mobile;
+
+        @include tablet {
+            border-top: 0;
+            padding: 0.6rem 0 0.4rem;
+        }
+
+        &-left {
+            @include column;
+
+            @include tablet {
+                @include row;
+                justify-content: space-between;
+                width: 22vh;
+            }
+
+            &-author {
+                @include subhead--mobile;
+                margin: 0;
+                padding-bottom: 0.8rem;
+
+                @include tablet {
+                    padding-bottom: 0;
+                    @include subhead--tablet;
+                }
+            }
+
+            &-date {
+                text-align: left;
+                @include body--mobile;
+                color: silver;
+                font-weight: 600;
+                margin: 0;
+
+                @include tablet {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &-right {
+            @include column;
+
+            @include tablet {
+                @include row;
+                justify-content: space-between;
+                width: 20vh;
+            }
+
+            @include desktop {
+                padding-right: 1.5rem;
+            }
+
+            &-views {
+                @include row;
+                margin: 0;
+                padding-bottom: 0.8rem;
+
+                @include tablet {
+                    padding-bottom: 0;
+                }
+
+                &-img {
+                    padding-right: 0.48rem;
+                }
+
+                &-count {
+                    @include body--mobile;
+                    color: silver;
+                    font-weight: 600;
+
+                    @include tablet {
+                        @include label--tablet;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            &-likes {
+                @include row;
+                margin: 0;
+
+                &-img {
+                    padding-right: 0.48rem;
+                }
+
+                &-count {
+                    @include body--mobile;
+                    color: silver;
+                    font-weight: 600;
+
+                    @include tablet {
+                        @include label--tablet;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        @include body--mobile;
+
+        @include tablet {
+            @include body--tablet;
+            margin-top: 1.5rem;
+        }
+
+        @include desktop {
+            width: 96%;
+            align-self: flex-start;
+        }
+    }
+}

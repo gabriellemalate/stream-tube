@@ -4,7 +4,10 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import LandingPage from './pages/Landing/Landing';
-import UploadPage from "./pages/Upload/Upload"
+import UploadPage from "./pages/Upload/Upload";
+import SelectedVideo from "./pages/Landing/Landing";
+import Success from './components/Success/Success';
+import NotFound from './components/NotFound/Notfound';
 
 function App() {
 
@@ -14,7 +17,10 @@ function App() {
         <Header />
         <Routes>
           <Route path='/' element={<LandingPage />} />
+          <Route path='/videos/:videoId' element={<SelectedVideo />} />
           <Route path='/upload' element={<UploadPage />} />
+          <Route path='/success' element={<Success/>}/>
+          <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>

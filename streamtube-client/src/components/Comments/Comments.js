@@ -12,15 +12,15 @@ function Comments({ comments }) {
     });
 
     return (
-        <article className='comments'>
-            <div key={id} className='comments__eq'>
-                <img className='comments__img' src={Empty} alt="Commenter"></img>
-                <div className="comments__text">
-                    <div className="comments__text-top">
-                        <h3 className="comments__text-top-name">{name}</h3>
-                        <p className="comments__text-top-date">{formattedDate}</p>
+        <article className='comment'>
+            <div key={id} className='comment__eq'>
+                <img className='comment__img' src={Empty} alt="Commenter"></img>
+                <div className="comment__text">
+                    <div className="comment__text-top">
+                        <h3 className="comment__text-top-name">{name}</h3>
+                        <p className="comment__text-top-date">{formattedDate}</p>
                     </div>
-                    <p className="comments__text-comment">{comment}</p>
+                    <p className="comment__text-comment">{comment}</p>
                 </div>
             </div>
         </article>

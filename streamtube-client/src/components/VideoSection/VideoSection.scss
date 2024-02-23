@@ -1,2 +1,21 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.video {
+    @include column;
+
+    height: auto;
+
+    @include tablet {
+        @include column;
+    }
+
+    &-eq {
+        width: 100%;
+        
+        @include tablet {
+            background-color: black;
+            @include column;
+        }
+    }
+}

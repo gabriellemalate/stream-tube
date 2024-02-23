@@ -9,12 +9,12 @@ function Header() {
     return (
         <header className='header'>
             <div className='header_eq'>
-                <Link to="/">
+                <Link to="/" className="header__logo">
                     StreamTube
                 </Link>
 
-                <div className='header_right'>
-                    <div className='header_right__search'>
+                <div className='header-right'>
+                    <div className='header-right__search'>
                         <form className="header-form" action="" method="">
                             <img className="header-form__icon" src={MagnifyingGlass} alt="Search" />
                             <textarea className="header-form__box" type="search" placeholder="Search" />
@@ -27,6 +27,7 @@ function Header() {
                             UPLOAD
                         </div>
                     </Link>
+                    <img className="header__user--tablet" src="" alt="User" />
                 </div>
             </div>
         </header>

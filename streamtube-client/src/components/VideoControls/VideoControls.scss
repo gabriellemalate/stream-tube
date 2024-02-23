@@ -1,2 +1,148 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.video-controls {
+    position: relative;
+    width: 90%;
+    bottom: 2rem;
+    @include row;
+    justify-content: space-between;
+
+    @include tablet {
+        bottom: 2.8rem;
+    }
+
+    @include tablet {
+        width: 87.6%;
+        max-width: 88vh;
+    }
+
+    &__play {
+        @include controls;
+        height: 5.4vw;
+        max-height: 1.2rem;
+        padding: 0 0.6rem;
+
+        @include tablet {
+            max-width: 5vh;
+            max-height: 2rem;
+            @include row;
+        }
+
+        &-icon {
+            width: 2vw;
+            max-height: 0.68rem;
+            cursor: pointer;
+
+            @include tablet {
+                width: 3vw;
+                max-height: 0.8rem;
+            }
+        }
+    }
+
+    &__eq {
+        @include row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__scrub {
+        @include row;
+        @include controls;
+        justify-content: space-between;
+        padding: 0 0.48rem;
+        width: 88%;
+        cursor: pointer;
+
+        @include tablet {
+            height: 2rem;
+            width: 94%;
+            justify-content: center;
+        }
+
+        &ber {
+            width: 100%;
+
+            @include tablet {
+                width: 87%;
+            }
+
+            &::-webkit-slider-runnable-track {
+                background: black;
+                height: 0.2rem;
+            }
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                background-color: white;
+                margin-top: -0.4rem;
+                width: 1rem;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        &-time {
+            color: silver;
+            margin: 0;
+            @include label--mobile;
+            padding-left: 0.4rem;
+            font-size: 0.5rem;
+
+            @include tablet {
+                padding-left: 0.84rem;
+            }
+        }
+    }
+
+    &__right {
+        @include row;
+        @include controls;
+        justify-content: space-between;
+        width: 16vw;
+        max-width: 3.4rem;
+        padding: 0rem 0.32rem;
+        height: 2.2vh;
+
+        @include tablet {
+            height: 2rem;
+            max-width: 4.1rem;
+            justify-content: space-evenly;
+        }
+
+        &-link {
+            height: 5.4vw;
+            max-height: 1.2rem;
+            @include row;
+            width: 1rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            @include tablet {
+                width: 2rem;
+            }
+        }
+
+        &-expand {
+            width: 4.4vw;
+            max-height: 1rem;
+
+            @include tablet {
+                width: 2rem;
+                max-height: 1.4rem;
+            }
+        }
+
+        &-volume {
+            width: 4.4vw;
+            max-height: 1rem;
+
+            @include tablet {
+                max-height: 1.4rem;
+            }
+        }
+    }
+}
+

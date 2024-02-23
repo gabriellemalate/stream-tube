@@ -1,2 +1,39 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.main {
+    background-color: $white;
+
+    &-eq {
+        
+        @include desktop {
+            @include row;
+            justify-content: center;
+        }
+        
+        &__all {
+            @include desktop {
+                @include row;
+                align-items: flex-start;
+                width: 98%;
+                max-width: 141vh;
+            }
+    
+        }
+
+        &__section {
+            @include desktop {
+                width: 64.4%;
+                @include column;
+                border-right: 0.09rem solid $mercury;
+            }
+
+            &-load {
+                @include page-head--tablet;
+                font-size: 3rem;
+            }
+        }
+    }
+
+    
+}

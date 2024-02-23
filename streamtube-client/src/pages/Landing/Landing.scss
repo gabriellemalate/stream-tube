@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .main {
-    background-color: $white;
+    background-color: white;
 
     &-eq {
         
@@ -25,7 +25,7 @@
             @include desktop {
                 width: 64.4%;
                 @include column;
-                border-right: 0.09rem solid $mercury;
+                border-right: 0.09rem solid gray;
             }
 
             &-load {

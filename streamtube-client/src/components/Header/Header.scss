@@ -96,7 +96,6 @@
             width: 100%;
             padding-left: 2.2rem;
             max-height: 2.5rem;
-            @include font;
             font-family: avenir-next, Avenir, Arial, Helvetica, sans-serif;
 
             @include tablet {
@@ -108,7 +107,7 @@
             }
             &::placeholder {
                 font-family: avenir-nexr, avenir, Arial, Helvetica, sans-serif;
-                color: $brainflix-black;
+                color: black;
 
                 @include tablet {
                     @include label--tablet;
@@ -117,7 +116,7 @@
             }
 
             &:focus {
-                border-color: $brainflix-blue;
+                border-color: blue;
                 outline: none;
             }
         }

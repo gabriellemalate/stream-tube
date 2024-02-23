@@ -1,2 +1,203 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+body {
+    background-color: white;
+}
+.upload {
+    width: 100%;
+    @include column;
+    border-top: 0.1rem gray solid;
+
+    &-eq {
+        @include column;
+        align-items: flex-start;
+        width: 90%;
+
+        @include desktop {
+            width: 80%;
+        }
+
+        &__all {
+            @include tablet {
+                border-bottom: 0.1rem solid gray;
+                padding-bottom: 1rem;
+            }
+            @include desktop {
+                @include row;
+                width: 100%;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+        }
+        &__boxes {
+            @include desktop {
+                width: 80%;
+                padding-left: 1.5rem
+            }
+        }
+    }
+    &-head {
+        @include page-head--mobile;
+        padding-top: 0.4rem;
+
+        @include tablet {
+            @include page-head--tablet;
+            border-bottom: 0.1rem gray solid;
+            width: 100%;
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    &-thumb {
+        @include column;
+        align-items: flex-start;
+
+        &__head {
+            @include subhead--mobile;
+            color: silver;
+            margin: 0;
+            padding-bottom: 0.4rem;
+
+            @include desktop {
+                @include subhead--tablet
+            }
+        }
+        &__preview {
+            width: 100%;
+            background-color: gray;
+            border-radius: 0.25rem;
+
+            @include tablet {
+                width: 50%;
+            }
+            @include desktop {
+                width: 36vh;
+            }
+        }
+    }
+    &-title {
+        width: 100%;
+        padding-top: 1rem;
+        @include desktop {
+            padding-top: 0;
+        }
+        &__head {
+            @extend .upload-thumb__head;
+            @include desktop {
+            padding-bottom: .2rem;
+            }
+        }
+        &__box {
+            resize: none;
+            font-family: avenir;
+            padding: 0.4rem 0 0 0.6rem;
+            @include input-box;
+            width: 100%;
+
+            @include tablet {
+                padding-left: 1rem;
+            }
+
+            &::placeholder {
+                color: black;
+            }
+
+            &.error {
+                border: .1rem solid red;
+            }
+        }
+    }
+    &-description {
+        padding-top: 1rem;
+        width: 100%;
+        
+        &__head {
+            @extend .upload-thumb__head;
+            @include desktop {
+                padding-bottom: .2rem;
+                }
+        }
+        &__box {
+            @extend .upload-title__box;
+            height: 12vh;
+            max-height: 6rem;
+
+            @include desktop {
+                height: 10vh;
+            }
+
+            &.error {
+                border: .1rem solid red;
+            }
+        }
+    }
+
+    &-button {
+        @include button--mobile;
+        @include label--mobile;
+        font-size: 0.78rem;
+        padding: 1rem 0.48rem;
+        @include row;
+        justify-content: flex-start;
+        width: 100%;
+
+        @include tablet {
+            width: 16.5vh;
+            margin-top: 0.5rem;
+        }
+
+        &:hover {
+            background-color: darkblue;
+            cursor: pointer;
+        }
+
+        &s {
+            width: 100%;
+            padding-top: 1rem;
+            @include tablet {
+                @include column;
+                align-items: flex-end;
+            }
+        }
+
+        &-eq {
+            @include row;
+            justify-content: space-between;
+            width: 56%;
+
+            @include tablet {
+                width: 11vh;
+            }
+        }
+
+        &-icon {
+            width: 1.32rem;
+            left: 2rem;
+        }
+    }
+    &-cancel {
+        color: blue;
+        width: 100%;
+        height: 2.5rem;
+        border: 0;
+        font-weight: 700;
+        background-color: white;
+        margin-top: 1rem;
+        border-radius: 0.25rem;
+
+        @include tablet {
+            width: 14vh;
+            margin: 0;
+            position: relative;
+            bottom: 2.5rem;
+            right: 11.6rem;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: gray;
+            cursor: pointer;
+        }
+    }
+}

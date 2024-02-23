@@ -55,7 +55,7 @@ const handleTitleChange = (e) => {
                     <div className="upload-eq__all">
                         <article className="upload-thumb">
                             <h3 className="upload-thumb__head ">VIDEO THUMBNAIL</h3>
-                            <img className="upload-thumb__preview" alt="Preview" src={bike} />
+                            <img className="upload-thumb__preview" alt="Preview" src={preview} />
                         </article>
 
                         <div className="upload-eq__boxes">

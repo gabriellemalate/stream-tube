@@ -64,7 +64,6 @@
             width: 94%;
             margin-bottom: 1rem;
             padding-left: 1rem;
-            @include font;
             font-family: avenir-next, Avenir, Arial, Helvetica, sans-serif;
 
             &:focus {
@@ -77,7 +76,7 @@
             }
 
             &:focus.has-error {
-                border-color: $brainflix-blue;
+                border-color: blue;
             }
 
             @include tablet {

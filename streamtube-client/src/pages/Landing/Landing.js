@@ -5,7 +5,7 @@ import axios from "axios";
 import VideoSection from "../../components/VideoSection/VideoSection";
 import VideoInfo from '../../components/VideoInfo/VideoInfo';
 import SideBar from "../../components/SideBar/SideBar";
-import Comments from "../../components/CommentSection/CommentSection";
+import CommentSection from "../../components/CommentSection/CommentSection";
 
 const apiUrl = "http://localhost:8080";
 
@@ -91,7 +91,7 @@ function LandingPage() {
                             <>
                                 <div className="main-eq__section">
                                     <VideoInfo videoData={selectedVideo || videoData[0]} />
-                                    <Comments
+                                    <CommentSection
                                     videoData={selectedVideo}
                                     onAddComment={addComment}
                                 />

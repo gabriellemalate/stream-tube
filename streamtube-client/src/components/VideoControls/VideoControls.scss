@@ -69,12 +69,12 @@
             }
 
             &::-webkit-slider-runnable-track {
-                background: $brainflix-DarkBlack;
+                background: black;
                 height: 0.2rem;
             }
             &::-webkit-slider-thumb {
                 -webkit-appearance: none;
-                background-color: $white;
+                background-color: white;
                 margin-top: -0.4rem;
                 width: 1rem;
                 cursor: pointer;
@@ -83,7 +83,7 @@
         }
 
         &-time {
-            color: $silver;
+            color: silver;
             margin: 0;
             @include label--mobile;
             padding-left: 0.4rem;

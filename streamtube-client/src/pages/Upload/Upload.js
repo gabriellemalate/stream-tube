@@ -62,26 +62,26 @@ const handleTitleChange = (e) => {
                             <article className="upload-title">
                                 <h3 className="upload-title__head">TITLE YOUR VIDEO</h3>
                                 <input 
-                                className="upload-title__box"
+                                className={`upload-title__box ${inputError.title ? "error" : ""}`}
                                 placeholder="Add a title to your video"
                                 value={title}
-                                
+                                onChange={handleTitleChange}
                                 />
                             </article>
 
                             <article className="upload-description">
                                 <h3 className="upload-description__head">ADD A VIDEO DESCRIPTION</h3>
                                 <textarea
-                                    className="upload-description__box"
+                                    className={`upload-description__box ${inputError.description ? "error" : ""}`} 
                                     placeholder="Add a description to your video"
                                     value={description}
-                                    
+                                    onChange={handleDescriptionChange}
                                 />
                             </article>
                         </div>
                     </div>
 
-
+                    {error && <div className="upload-error">{error}</div>}
 
                     <div className="upload-buttons">
                         <button className="upload-button" 

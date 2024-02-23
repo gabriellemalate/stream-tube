@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .comments-add {
-    border-bottom: $mercury 0.1rem solid;
+    border-bottom: gray 0.1rem solid;
 
     @include tablet {
         padding-bottom: 0.6rem;
@@ -45,7 +45,7 @@
 
         &-title {
             @include subhead--mobile;
-            color: $silver;
+            color: silver;
             margin: 0;
             padding-bottom: 0.2rem;
         }
@@ -68,7 +68,7 @@
             font-family: avenir-next, Avenir, Arial, Helvetica, sans-serif;
 
             &:focus {
-                border-color: $brainflix-blue;
+                border-color: blue;
                 outline: none; 
             }
 
@@ -87,7 +87,7 @@
 
             &::placeholder {
                 font-family: avenir-nexr, avenir, Arial, Helvetica, sans-serif;
-                color: $brainflix-black;
+                color: black;
             }
         }
         &-button {
@@ -100,7 +100,7 @@
             justify-content: flex-start;
 
             &:hover{
-                background-color: $brainflix-DarkBlue;
+                background-color: darkblue;
                 cursor: pointer;
             }
 

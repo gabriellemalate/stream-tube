@@ -4,8 +4,9 @@ import './App.scss';
 
 import Header from './components/Header/Header';
 import LandingPage from './pages/Landing/Landing';
-import UploadPage from "./pages/Upload/Upload"
-import SelectedVideo from "./pages/Main/Main"
+import UploadPage from "./pages/Upload/Upload";
+import SelectedVideo from "./pages/Landing/Landing";
+import NotFound from './components/NotFound/Notfound';
 
 function App() {
 

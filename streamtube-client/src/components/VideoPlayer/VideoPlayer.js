@@ -18,8 +18,8 @@ function VideoPlayer({ selectedVideo, isPlaying }) {
     }, [isPlaying]);
 
     return (
-        <video ref={videoRef} autoPlay className='video-vid' poster={posterImageUrl}>
-            <source className='video-vid__source' src={videoUrl} />
+        <video ref={videoRef} autoPlay className='player' poster={posterImageUrl}>
+            <source className='player__source' src={videoUrl} />
         </video>
     );
 }

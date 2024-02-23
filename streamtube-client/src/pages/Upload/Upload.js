@@ -1,11 +1,41 @@
 import "./Upload.scss"
-import React from "react";
+import React, { useState }  from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import publish from "../../assets/images/icons/publish.svg";
 import preview from "../../assets/images/Upload-video-preview.png";
 
 
 function UploadPage() {
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const navigate = useNavigate();
+
+    const handleTitleChange = (e) => {
+        setTitle(e.target.value);
+    };
+
+    const handleDescriptionChange = (e) => {
+        setDescription(e.target.value);
+    };
+
+    const handlePublish = async () => {
+        // validate that both title and description are provided
+        if (!title.trim() || !description.trim()) 
+
+        try {
+            const response = await axios.post("http://localhost:8080/videos", {
+                title,
+                description,
+            });
+
+            console.log("Server response:", response.data);
+            // redirect to success page
+            navigate("/success");
+        } catch (error) {
+            
+        }
+    };
 
     return (
         <>

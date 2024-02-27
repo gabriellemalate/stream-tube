@@ -1,8 +1,9 @@
 import React from "react";
 import MagnifyingGlass from "../../assets/images/icons/search.svg"
 import Upload from "../../assets/images/icons/upload.svg";
-import "./Header.scss"
+import "./Header.scss";
 import { Link } from "react-router-dom";
+import User from "../../assets/userimage.png";
 
 function Header() {
 
@@ -19,7 +20,7 @@ function Header() {
                             <img className="header-form__icon" src={MagnifyingGlass} alt="Search" />
                             <textarea className="header-form__box" type="search" placeholder="Search" />
                         </form>
-                        <img className="header__user--mobile" src="" alt="User" />
+                        <img className="header__user--mobile" src={User} alt="User" />
                     </div>
                     <Link className="header-right__button" to="/upload">
                         <div className="header-right__button-eq">
@@ -27,7 +28,7 @@ function Header() {
                             UPLOAD
                         </div>
                     </Link>
-                    <img className="header__user--tablet" src="" alt="User" />
+                    <img className="header__user--tablet" src={User} alt="User" />
                 </div>
             </div>
         </header>

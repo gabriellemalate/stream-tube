@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./CommentAdd.scss"
 import SpeechBubble from "../../assets/images/icons/add_comment.svg";
+import User from "../../assets/userimage.png";
 
 const apiKey = "c8f93081-09f2-4de0-baa5-ffe6fbc33fcf"
 
@@ -46,7 +47,7 @@ function CommentAdd({ onAddComment, videoId }) {
         <article className={`comments-add ${hasError ? "has-error" : ""}`}
         >
             <div className="comments-add__all">
-                <img className="comments-add__img" src="" alt="User Display" />
+                <img className="comments-add__img" src={User} alt="User Display" />
                 <div className="comments-add__text">
                     <h3 className="comments-add__text-title">JOIN THE CONVERSATION</h3>
                     <form className="comments-add__text-form" onSubmit={handleCommentSubmit}>

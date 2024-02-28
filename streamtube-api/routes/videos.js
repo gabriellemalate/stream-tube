@@ -43,7 +43,7 @@ router.post('/', (req, res) => {
         id: newVideoId,
         title,
         description,
-        channel: 'BrainStation',
+        channel: 'Placeholder',
         image: 'Upload-video-preview.jpg',
         views: '0',
         likes: '0',

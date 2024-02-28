@@ -35,8 +35,26 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    const { title, description } = req.body;
+    const { title, description, video } = req.body;
 
+    // Check if ID exists, if exists, it's an update operation
+    if (id) {
+        const videos = readVideosData();
+        const existingVideoIndex = videos.findIndex(v => v.id === id);
+        if (existingVideoIndex !== -1) {
+            const existingVideo = videos[existingVideoIndex];
+            // Update existing video with new data
+            existingVideo.title = title;
+            existingVideo.description = description;
+            existingVideo.video = video || existingVideo.video; // Preserve existing video if not provided
+            writeVideosData(videos);
+            return res.status(200).json(existingVideo);
+        } else {
+            return res.status(404).json({ message: 'Video not found' });
+        }
+    }
+
+    // If no ID provided, it's a creation operation
     const newVideoId = uuidv4();
 
     const newVideo = {
@@ -48,7 +66,7 @@ router.post('/', (req, res) => {
         views: '0',
         likes: '0',
         duration: "4:20",
-        video: "https://youtu.be/pWOVEI2u12g",
+        video: video || "https://youtu.be/pWOVEI2u12g", // Default video if not provided
         timestamp: Date.now(),
         comments: [],
     };

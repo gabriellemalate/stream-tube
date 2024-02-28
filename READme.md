@@ -10,5 +10,7 @@ Fully responsive. Available in all screen sizes.
 
 ## Screenshots of the current version (Feb 2024)
 
+#### Upload page
 ![](Upload.png)
+#### Video Player page
 ![](Landing.png)

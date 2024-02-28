@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import publish from "../../assets/images/icons/publish.svg";
-import preview from "../../assets/images/Upload-video-preview.png";
+// import preview from "../../assets/images/Upload-video-preview.png";
 
 
 function UploadPage() {
@@ -51,10 +51,16 @@ function UploadPage() {
         }
 
         try {
-            const response = await axios.post("http://localhost:8080/videos", {
-                title,
-                description,
-                video: videoUrl,
+            const formData = new FormData();
+            formData.append("image", thumbnail); // Append the file to form data
+            formData.append("title", title);
+            formData.append("description", description);
+            formData.append("video", videoUrl);
+
+            const response = await axios.post("http://localhost:8080/videos", formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data", // Set content type for FormData
+                },
             });
 
             console.log("Server response:", response.data);
@@ -74,7 +80,12 @@ function UploadPage() {
                     <div className="upload-eq__all">
                         <article className="upload-thumb">
                             <h3 className="upload-thumb__head ">VIDEO THUMBNAIL</h3>
-                            <img className="upload-thumb__preview" alt="Preview" src={preview} />
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={handleThumbnailChange}
+                                className={`upload-thumb__file ${inputError.thumbnail ? "error" : ""}`}
+                            />
                         </article>
 
                         <div className="upload-eq__boxes">

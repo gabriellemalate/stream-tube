@@ -9,6 +9,7 @@ import preview from "../../assets/images/Upload-video-preview.png";
 function UploadPage() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [videoUrl, setVideoUrl] = useState("");
     const navigate = useNavigate();
     const [error, setError] = useState(null);
     const [inputError, setInputError] = useState({ title: false, description: false });
@@ -19,6 +20,10 @@ function UploadPage() {
 
     const handleDescriptionChange = (e) => {
         setDescription(e.target.value);
+    };
+
+    const handleVideoUrlChange = (e) => {
+        setVideoUrl(e.target.value);
     };
 
     const handlePublish = async () => {
@@ -36,6 +41,7 @@ function UploadPage() {
             const response = await axios.post("http://localhost:8080/videos", {
                 title,
                 description,
+                video: videoUrl,
             });
 
             console.log("Server response:", response.data);
@@ -82,10 +88,10 @@ function UploadPage() {
                             <article className="upload-link">
                                 <h3 className="upload-link__head">VIDEO URL</h3>
                                 <textarea
-                                    // className={`upload-description__box ${inputError.description ? "error" : ""}`}
+                                    className={`upload-description__box ${inputError.videoUrl ? "error" : ""}`}
                                     placeholder="Add the link to your video here"
-                                    // value={description}
-                                    // onChange={handleDescriptionChange}
+                                    value={videoUrl}
+                                    onChange={handleVideoUrlChange}
                                 />
                             </article>
                         </div>

@@ -88,7 +88,7 @@ function UploadPage() {
                             <article className="upload-link">
                                 <h3 className="upload-link__head">VIDEO URL</h3>
                                 <textarea
-                                    className={`upload-description__box ${inputError.videoUrl ? "error" : ""}`}
+                                    className={`upload-link__box ${inputError.videoUrl ? "error" : ""}`}
                                     placeholder="Add the link to your video here"
                                     value={videoUrl}
                                     onChange={handleVideoUrlChange}

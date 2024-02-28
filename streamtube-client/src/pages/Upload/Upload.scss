@@ -132,7 +132,27 @@ body {
             }
         }
     }
+    
+    &-link {
+        padding-top: 1rem;
+        width: 100%;
+        
+        &__head {
+            @extend .upload-thumb__head;
+            @include desktop {
+                padding-bottom: .2rem;
+                }
+        }
+        &__box {
+            @extend .upload-title__box;
 
+            
+
+            &.error {
+                border: .1rem solid red;
+            }
+        }
+    }
     &-button {
         @include button--mobile;
         @include label--mobile;

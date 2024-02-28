@@ -10,9 +10,15 @@ function UploadPage() {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [videoUrl, setVideoUrl] = useState("");
+    const [thumbnail, setThumbnail] = useState(null);
     const navigate = useNavigate();
     const [error, setError] = useState(null);
-    const [inputError, setInputError] = useState({ title: false, description: false });
+    const [inputError, setInputError] = useState({ 
+        title: false, 
+        description: false, 
+        videoUrl: false,
+        thumbnail: false, 
+    });
 
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
@@ -26,13 +32,20 @@ function UploadPage() {
         setVideoUrl(e.target.value);
     };
 
+    const handleThumbnailChange = (e) => {
+        const file = e.target.files[0];
+        setThumbnail(file);
+    };
+
     const handlePublish = async () => {
         // validate that both title and description are provided
-        if (!title.trim() || !description.trim()) {
-            setError("You must provide both a title and a description.");
+        if (!title.trim() || !description.trim() || !videoUrl.trim() || !thumbnail) {
+            setError("You must provide a title, a description, a video URL, and a thumbnail image.");
             setInputError({
                 title: !title.trim(),
                 description: !description.trim(),
+                videoUrl: !videoUrl.trim(),
+                thumbnail: !thumbnail,
             });
             return;
         }

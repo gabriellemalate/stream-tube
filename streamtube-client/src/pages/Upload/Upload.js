@@ -1,5 +1,5 @@
 import "./Upload.scss"
-import React, { useState }  from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import publish from "../../assets/images/icons/publish.svg";
@@ -13,7 +13,7 @@ function UploadPage() {
     const [error, setError] = useState(null);
     const [inputError, setInputError] = useState({ title: false, description: false });
 
-const handleTitleChange = (e) => {
+    const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
 
@@ -50,7 +50,7 @@ const handleTitleChange = (e) => {
     return (
         <>
             <main className="upload">
-            <div className="upload-eq">
+                <div className="upload-eq">
                     <h1 className="upload-head">Upload Video</h1>
                     <div className="upload-eq__all">
                         <article className="upload-thumb">
@@ -61,21 +61,31 @@ const handleTitleChange = (e) => {
                         <div className="upload-eq__boxes">
                             <article className="upload-title">
                                 <h3 className="upload-title__head">TITLE YOUR VIDEO</h3>
-                                <input 
-                                className={`upload-title__box ${inputError.title ? "error" : ""}`}
-                                placeholder="Add a title to your video"
-                                value={title}
-                                onChange={handleTitleChange}
+                                <input
+                                    className={`upload-title__box ${inputError.title ? "error" : ""}`}
+                                    placeholder="Add a title to your video"
+                                    value={title}
+                                    onChange={handleTitleChange}
                                 />
                             </article>
 
                             <article className="upload-description">
                                 <h3 className="upload-description__head">ADD A VIDEO DESCRIPTION</h3>
                                 <textarea
-                                    className={`upload-description__box ${inputError.description ? "error" : ""}`} 
+                                    className={`upload-description__box ${inputError.description ? "error" : ""}`}
                                     placeholder="Add a description to your video"
                                     value={description}
                                     onChange={handleDescriptionChange}
+                                />
+                            </article>
+
+                            <article className="upload-link">
+                                <h3 className="upload-link__head">VIDEO URL</h3>
+                                <textarea
+                                    // className={`upload-description__box ${inputError.description ? "error" : ""}`}
+                                    placeholder="Add the link to your video here"
+                                    // value={description}
+                                    // onChange={handleDescriptionChange}
                                 />
                             </article>
                         </div>
@@ -84,8 +94,8 @@ const handleTitleChange = (e) => {
                     {error && <div className="upload-error">{error}</div>}
 
                     <div className="upload-buttons">
-                        <button className="upload-button" 
-                        onClick={handlePublish}
+                        <button className="upload-button"
+                            onClick={handlePublish}
                         >
                             <div className="upload-button-eq">
                                 <img className="upload-button-icon" src={publish} alt="Publish" />

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import publish from "../../assets/images/icons/publish.svg";
-// import preview from "../../assets/images/Upload-video-preview.png";
+import preview from "../../assets/images/Upload-video-preview.png";
 
 
 function UploadPage() {
@@ -34,7 +34,9 @@ function UploadPage() {
 
     const handleThumbnailChange = (e) => {
         const file = e.target.files[0];
-        setThumbnail(file);
+        if (file) {
+            setThumbnail(URL.createObjectURL(file));
+        }
     };
 
     const handlePublish = async () => {
@@ -80,6 +82,11 @@ function UploadPage() {
                     <div className="upload-eq__all">
                         <article className="upload-thumb">
                             <h3 className="upload-thumb__head ">VIDEO THUMBNAIL</h3>
+                            {thumbnail ? (
+                                <img className="upload-thumb__preview" alt="Preview" src={thumbnail} />
+                            ) : (
+                                <img className="upload-thumb__preview" alt="Preview" src={preview} />
+                            )}
                             <input
                                 type="file"
                                 accept="image/*"

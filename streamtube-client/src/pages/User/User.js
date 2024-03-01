@@ -9,7 +9,7 @@ function UserPage() {
 
     return (
         <>
-            <main className="Sign">
+            <main className="sign">
             </main>
         </>
     );

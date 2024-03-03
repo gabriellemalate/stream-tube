@@ -47,6 +47,7 @@ function VideoLibrary() {
                     </section>
                     <section className="library-list">
                         <h2 className="library-list__head">Favorites</h2>
+                        <div className="library-list__item"></div>
 
                     </section>
                     <section className="library-mods">

@@ -8,12 +8,9 @@ import UploadPage from "./pages/Upload/Upload";
 import SelectedVideo from "./pages/Landing/Landing";
 import Success from './components/Success/Success';
 import NotFound from './components/NotFound/Notfound';
-<<<<<<< HEAD
-import UserPage from "./pages/User/User";
-=======
+
 import UserPage from './pages/User/User';
 import VideoLibrary from './pages/VideoLibrary/VideoLibrary';
->>>>>>> User-Specific
 
 function App() {
 

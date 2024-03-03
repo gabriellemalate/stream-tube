@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./SideBar.scss";
 import VideoOption from "../VideoOption/VideoOption";
 
@@ -25,6 +25,9 @@ function SideBar({ videoData, selectedVideo }) {
                         />
                     </div>
                 ))}
+                <Link to="/library">
+                    <button className="sidebar__more">See More</button>
+                </Link>
             </div>
         </section>
     );

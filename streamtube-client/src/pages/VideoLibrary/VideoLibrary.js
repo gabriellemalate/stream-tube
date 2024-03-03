@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
-
 function VideoLibrary() {
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleExpand = () => {
+        setExpanded(!expanded);
+    };
 
     return (
         <>

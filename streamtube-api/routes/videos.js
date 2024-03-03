@@ -84,4 +84,11 @@ router.post('/', (req, res) => {
     res.status(201).json(newVideo);
 });
 
+// playlist funcitons
+// read list data
+
+// write list data
+
+// list requests
+
 module.exports = router;

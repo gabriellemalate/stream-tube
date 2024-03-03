@@ -26,7 +26,7 @@ function SideBar({ videoData, selectedVideo }) {
                     </div>
                 ))}
                 <Link to="/library">
-                    <button>See More</button>
+                    <button className="sidebar__more">See More</button>
                 </Link>
             </div>
         </section>

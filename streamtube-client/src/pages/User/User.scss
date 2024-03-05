@@ -7,12 +7,21 @@
     justify-content: center;
 
     &-header {
-        @include row;
-        justify-content: space-between;
         width: 100%;
-        align-self: center;
         background-color: $blue;
         padding: 0 4%;
+        @include row;
+        justify-content: space-between;
+
+        @include tablet {
+            @include column;
+        }
+
+        @include desktop {
+        @include row;
+        justify-content: space-between;
+        }
+        
         &__logo {
             font-size: 1.2rem;
             color: aliceblue;
@@ -21,6 +30,8 @@
             width: 20%;
             @include row;
             justify-content: space-between;
+            max-width: 14rem;
+            text-wrap: nowrap;
             &-signup {
                 border: 0;
                 padding: 0.4rem 1.6rem;
@@ -31,6 +42,9 @@
             }
             &-login {
                 @extend .sign-header__actions-signup;
+                @include mobile {
+                    display: none;
+                }
             }
         }
     }
@@ -40,8 +54,7 @@
         height: 100vh;
         &__eq {
             @include column;
-            border: 1px solid red;
-            margin: 20vh 0;
+            margin: 12vh 0;
         }
 
     }

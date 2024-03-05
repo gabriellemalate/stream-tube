@@ -1,2 +1,37 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.library {
+    @include column;
+
+    &-eq {
+        width: 90%;
+    }
+
+    &-topper {
+        @include column;
+        width: 100%;
+
+        @include desktop {
+            @include row;
+            justify-content: space-between;
+        }
+    }
+    &-head {
+        letter-spacing: .1rem;
+        border-bottom: .1rem solid black;
+        padding: .6rem 0;
+    }
+    &-sort {
+        @include desktop {
+            padding-right: 3rem;
+        }
+        &__label {
+            padding: 0 1rem;
+        }
+        &__menu {
+            border-radius: .2rem;
+            height: 1.6rem;
+        }
+    }
+}

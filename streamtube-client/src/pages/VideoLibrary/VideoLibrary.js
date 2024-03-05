@@ -14,7 +14,7 @@ function VideoLibrary() {
         <>
             <main className="library">
                 <div className="library-eq">
-                    <article>
+                    <article className="library-topper">
                         <h1 className="library-head">Your Videos</h1>
                         <div className='library-sort'>
                             <label

@@ -26,12 +26,12 @@ function UserPage() {
                         <h3 className="sign-main__welcome">Welcome To</h3>
                         <h1 className="sign-main__head">StreamTube</h1>
                         <article className="sign-main__form">
-                            <textarea className="sign-main__username" placeholder="UserName"/>
-                            <textarea className="sign-main__password"
+                            <textarea className="sign-main__form-username" placeholder="User Name"/>
+                            <textarea className="sign-main__form-password"
                             placeholder="Password"/>
-                            <button className="sign-main__submit">Log In</button>
+                            <button className="sign-main__form-submit">Log In</button>
                             <p>or, if you do not already have an account:</p>
-                            <button className="sign-main__signup">Sign Up</button>
+                            <button className="sign-main__form-signup">Sign Up</button>
                         </article>
                     </div>
                 </main>

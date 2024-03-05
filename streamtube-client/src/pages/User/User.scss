@@ -1,2 +1,40 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+
+.sign {
+    @include column;
+    align-items: center;
+    justify-content: center;
+
+    &-header {
+        @include row;
+        justify-content: space-between;
+        width: 100%;
+        align-self: center;
+        background-color: $blue;
+        padding: 0 4%;
+        &__logo {
+            font-size: 1.2rem;
+            color: aliceblue;
+        }
+        &__actions {
+            width: 20%;
+            @include row;
+            justify-content: space-between;
+            &-signup {
+                border: 0;
+                padding: .4rem 1.6rem;
+                border-radius: .2rem;
+                background-color: white;
+                font-weight: 600;
+                color: $blue;
+            }
+            &-login {
+                @extend .sign-header__actions-signup
+            }
+        }
+    }
+    &-main {
+
+    }
+}

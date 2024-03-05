@@ -31,4 +31,25 @@
             padding-bottom: 1rem;
         }
     }
+    &__more {
+        @include row;
+        justify-content: center;
+        width: 100%;
+
+        &-button {
+        border-radius: .2rem;
+        background: $blue2;
+        border: 0;
+        color: black;
+        padding: .7rem 2rem;
+        font-size: .9rem;
+        font-weight: 600;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $blue;
+            color: white;
+        }
+        }
+    }
 }

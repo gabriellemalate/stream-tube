@@ -80,5 +80,8 @@ function VideoLibrary({ videoData, selectedVideo }) {
         </>
     );
 }
-
+VideoLibrary.propTypes = {
+    videoData: PropTypes.array.isRequired,
+    selectedVideo: PropTypes.object,
+};
 export default VideoLibrary;

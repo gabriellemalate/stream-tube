@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import VideoOption from "../VideoOption/VideoOption";
+import VideoOption from "../../components/VideoOption/VideoOption";
 
-function VideoLibrary() {
+function VideoLibrary({ videoData, selectedVideo }) {
     const [expanded, setExpanded] = useState(false);
     const navigate = useNavigate();
 

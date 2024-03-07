@@ -13,6 +13,11 @@ function VideoLibrary({ videoData, selectedVideo }) {
         setExpanded(!expanded);
     };
 
+    // Check if videoData is undefined or null before mapping through it
+    if (!videoData) {
+        return <div>No video data available</div>;
+    }
+
     return (
         <>
             <main className="library">

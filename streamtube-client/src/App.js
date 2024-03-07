@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route,} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import './App.scss';
 
 import Header from './components/Header/Header';
@@ -12,6 +12,9 @@ import UserPage from './pages/User/User';
 import VideoLibrary from './pages/VideoLibrary/VideoLibrary';
 
 function App() {
+  const [videoData, setVideoData] = useState([]);
+
+
 
   return (
     <>
@@ -21,9 +24,9 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/videos/:videoId' element={<SelectedVideo />} />
           <Route path='/upload' element={<UploadPage />} />
-          <Route path='/sign' element={<UserPage/>} />
-          <Route path='/library' element={<VideoLibrary/>} />
-          <Route path='/success' element={<Success/>}/>
+          <Route path='/sign' element={<UserPage />} />
+          <Route path='/library' element={<VideoLibrary videoData={videoData} />} />
+          <Route path='/success' element={<Success />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

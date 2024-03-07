@@ -19,7 +19,7 @@ function App() {
     // Fetch video data from API
     const fetchVideoData = async () => {
       try {
-        const response = await axios.get("your-api-url");
+        const response = await axios.get("http://localhost:8080/videos");
         setVideoData(response.data);
       } catch (error) {
         console.error("Error fetching video data:", error);

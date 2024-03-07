@@ -51,6 +51,7 @@ function VideoLibrary({ videoData, selectedVideo }) {
 
                         </div>
                     </article>
+                    <div className="library-lists">
                     <section className="library-list">
                         <h2 className="library-list__head">All Videos</h2>
                         {videoData.map((data) => (
@@ -71,6 +72,7 @@ function VideoLibrary({ videoData, selectedVideo }) {
                         <div className="library-list__item"></div>
 
                     </section>
+                    </div>
                     <section className="library-mods">
                         <h3 className="library-mods__action">Make a New Playlist</h3>
 

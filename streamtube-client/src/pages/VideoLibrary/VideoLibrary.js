@@ -54,7 +54,18 @@ function VideoLibrary() {
                     </article>
                     <section className="library-list">
                         <h2 className="library-list__head">All Videos</h2>
-
+                        {filteredVideoData.map((data) => (
+                    <div
+                        key={data.id}
+                        className="library-list__item"
+                        onClick={() => navigate(`/videos/${data.id}`)}>
+                        <VideoOption
+                            key={data.id}
+                            videoData={data}
+                            isSelected={selectedVideo && selectedVideo.id === data.id}
+                        />
+                    </div>
+                ))}
                     </section>
                     <section className="library-list">
                         <h2 className="library-list__head">Favorites</h2>

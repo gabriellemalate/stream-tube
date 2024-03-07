@@ -14,7 +14,19 @@ import VideoLibrary from './pages/VideoLibrary/VideoLibrary';
 function App() {
   const [videoData, setVideoData] = useState([]);
 
+  useEffect(() => {
+    // Fetch video data from API
+    const fetchVideoData = async () => {
+      try {
+        const response = await axios.get("your-api-url");
+        setVideoData(response.data);
+      } catch (error) {
+        console.error("Error fetching video data:", error);
+      }
+    };
 
+    fetchVideoData();
+  }, []);
 
   return (
     <>

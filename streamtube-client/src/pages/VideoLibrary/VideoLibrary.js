@@ -1,10 +1,18 @@
 import "./VideoLibrary.scss"
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import VideoOption from "../VideoOption/VideoOption";
 
 function VideoLibrary() {
     const [expanded, setExpanded] = useState(false);
+    const navigate = useNavigate();
+
+    // is selectedVideo truthy? if yes, then access its properties
+    const filteredVideoData = videoData.filter(
+        (video) => selectedVideo && video.id !== selectedVideo.id
+    );
 
     const toggleExpand = () => {
         setExpanded(!expanded);
@@ -45,7 +53,7 @@ function VideoLibrary() {
                         </div>
                     </article>
                     <section className="library-list">
-                        <h2 className="library-list__head">All</h2>
+                        <h2 className="library-list__head">All Videos</h2>
 
                     </section>
                     <section className="library-list">

@@ -2,6 +2,9 @@ import React from 'react';
 import { BrowserRouter, Routes, Route,} from 'react-router-dom';
 import './App.scss';
 
+import Header from './components/Header/Header';
+import LandingPage from './pages/Landing/Landing';
+
 function App() {
 
   return (
@@ -9,7 +12,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          {/* <Route path='/' element={<Landing />} /> */}
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/upload' element={<UploadPage />} />
         </Routes>
       </BrowserRouter>
     </>

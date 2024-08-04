@@ -6,6 +6,7 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+// localhost 8080
 const PORT = process.env.PORT || 8080;
 
 app.use(cors());

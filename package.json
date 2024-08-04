@@ -1,0 +1,36 @@
+{
+  "name": "stream_tube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gabriellemalate/stream-tube.git"
+  },
+  "keywords": [
+    "streamingservice",
+    "streaming",
+    "videoupload",
+    "youtubemock",
+    "viewing",
+    "videos"
+  ],
+  "author": "gabrielle malate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabriellemalate/stream-tube/issues"
+  },
+  "homepage": "https://github.com/gabriellemalate/stream-tube#readme",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.71.0",
+    "scss": "^0.2.4"
+  }
+}
